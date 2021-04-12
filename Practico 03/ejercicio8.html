@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Ejercicio 08</title>
+</head>
+
+<body>
+    <br />
+    <h4 align="center">
+        Confeccione un formulario que solicite el ingreso del nombre de una persona. Luego que seleccione si es mayor de
+        edad o no (por defecto inicializar en si), el teléfono (cargar por defecto 0299-) y por último en un textarea
+        solicitar que ingrese comentarios. Crear el boton del formulario para que los datos sean enviados al servidor
+        para su procesamiento
+    </h4>
+
+    <form>
+        <br />
+        <table align="center" cellpadding="5%">
+
+            <tr>
+                <td>Nombre: <input type="text" name="iNom" size="45" maxlength="40" /></td>
+            </tr>
+
+            <tr>
+                <td>
+                    Mayor de edad?
+                    <br />
+                    <select name="edad">
+                        <option selected>Si</option>
+                        <option>No</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Número de telefono:
+                    <input type="text" value="299-" name="Telefono">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <textarea name="comentario" rows="5" cols="50">Ingrese su comentario...</textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit">
+                    <input type="reset">
+                </td>
+            </tr>
+
+
+
+        </table>
+    </form>
+</body>
+
+</html>

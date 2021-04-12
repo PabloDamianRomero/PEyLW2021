@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>Ejercicio 10</title>
+</head>
+
+<body>
+    <br />
+    <h4 align="center">
+        Confeccione un formulario de un libro de visitas, se debe solicitar el nombre, mail, pais de origen (por defecto la opción seleccionada debe ser "seleccione país"), valoración del sitio (malo, regular, bueno, muy bueno, excelente) por defecto debe estar seleccionado "bueno". Por último disponer un textarea donde se puede ingresar los comentarios.
+    </h4>
+
+    <form>
+        <br />
+        <table align="center" cellpadding="5%">
+            <tr>
+                <td>Nombre: <input type="text" name="iNom" size="45" maxlength="40" /></td>
+            </tr>
+
+            <tr>
+                <td>Mail: <input type="text" name="iNom" size="45" maxlength="40" /></td>
+            </tr>
+
+            <tr>
+                <td>Pais de origen: 
+                    <select name="pais"> 
+                        <option selected>--Seleccione pais--</option>
+                        <option>Argentina</option>
+                        <option>Chile</option>
+                        <option>Uruguay</option>
+                        <option>Brasil</option>
+                        <option>Bolivia</option>
+                        <option>Paraguay</option>
+                    </select>
+            </tr>
+
+            <tr>
+                <td>Valoración del sitio: 
+                    <select name="pais"> 
+                        <option>Excelente</option>
+                        <option>Muy bueno</option>
+                        <option selected>Bueno</option>
+                        <option>Regular</option>
+                        <option>Malo</option>
+                    </select>
+            </tr>
+
+            <tr>
+                <td>
+                    <textarea rows="5" cols="40">Ingrese su comentario...</textarea>
+                </td>
+
+            </tr>
+
+
+        </table>
+    </form>
+</body>
+
+</html>
