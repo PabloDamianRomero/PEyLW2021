@@ -1,0 +1,354 @@
+/*
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Accumen
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120712
+*/
+
+
+/* 
+	INSTRUCCION
+	setee margen y relleno cero para todos los elementos de este sitio
+*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+/* 
+	INSTRUCCION
+	Los vinculos deben ser de color FF381A
+*/
+
+
+a {
+	text-decoration: underline;
+	color: #FF381A;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* 
+	INSTRUCCION
+	el color de fondo debe ser A9D0D6, el tamaño de la fuente debe ser de 11.5 
+*/
+
+body {
+	line-height: 1.75em;
+	color: #5A6466;
+	background-color: #A9D0D6;
+	/*font-size: 11.5em; VERIFICAR EL VALOR REAL QUE SE QUIERE */
+}
+
+body,input {
+	font-family: Kreon, serif;
+}
+
+br.clearfix {
+	clear: both;
+}
+
+/* 
+	INSTRUCCION
+	Los titulos de los headers deben tener peso normal (no ser negrita)
+*/
+#header h1,h2,h3,h4 {
+	text-transform: uppercase;
+
+	font-weight: normal;
+}
+
+/* 
+	INSTRUCCION
+	los "titulo 2# deben deben tener un tamaño de fuente relativo de 1.5em
+
+	titulo 2titulo3, titulo4  deben tener de fuente "Open Sans", sans-serif, color 2A3436 y margen ingerior de 1em
+
+	el tamaño de la fuente de titulo3 debe ser de 1.25em, y de titulo 4 de 1em
+*/
+
+h2{
+	font-size: 1.5em;
+}
+
+h2, h3, h4{
+	font-family: 'Open Sans', sans-serif;
+	color: #2A3436;
+	margin-bottom: 1em;
+}
+
+h3{
+	font-size: 1.25em;
+}
+
+h4{
+	font-size: 1em;
+}
+
+
+img.aligntop {
+	margin: 5px 0 2000px 0;
+}
+
+ul {
+	margin-bottom: 1.5em;
+}
+
+ul h4 {
+	margin-bottom: 0.35em;
+}
+
+.box {
+	margin: 0 0 50px 0;
+}
+
+#content {
+	padding: 0;
+	width: 615px;
+	margin: 0 0 0 285px;
+}
+
+#footer {
+	padding: 50px 0 80px 0;
+	text-align: center;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.7);
+	color: #587477;
+}
+
+
+#header {
+	height: 130px;
+	padding: 40px;
+	position: relative;
+}
+
+/*
+INSTRUCCION:
+El elemento logo debe estar posicionado de manera absoluta en posicion 40 40 y tener un ancho de 130px
+*/
+
+
+#logo {
+	line-height: 130px;
+	position: absolute;
+	top: 40px;
+	left: 40px;
+	width: 130px;
+}
+
+#logo a {
+	color: #2A3436;
+	text-decoration: none;
+}
+
+#logo h1 {
+	font-family: "Open Sans", sans-serif;
+	font-size: 3em;
+}
+
+/*
+INSTRUCCION: El elemento MENU debe tener posicion absoluta, con una posicion de arriba: 76px y derecha: 40px
+
+*/
+
+#menu {
+	line-height: 57px;
+	height: 57px;
+	font-family: "Open Sans", sans-serif;
+
+	position: absolute;
+	top: 76px;
+	right: 40px;
+}
+
+#menu a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #1C1C1C;
+	font-size: 1.2em;
+}
+
+#menu ul {
+	padding: 0 20px 0 20px;
+	list-style: none;
+}
+
+#menu ul li {
+	display: inline;
+	padding: 10px 10px 10px 10px;
+	margin: 0 8px 0 8px;
+}
+
+#menu ul li.active {
+	background: #F2EBDE;
+	border: solid 1px #BFB5A4;
+	box-shadow: inset 0px 0px 0px 1px #fff;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.9);
+}
+
+#menu ul li.active a {
+	color: #403B31;
+}
+
+#page {
+	margin: 0;
+	position: relative;
+	width: 900px;
+	padding: 20px 40px 0 40px;
+}
+
+#page .section-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+#page .section-list li {
+	padding: 25px 0 25px 0;
+	clear: both;
+}
+
+#page ul {
+	list-style: none;
+}
+
+#page ul li {
+	border-top: solid 1px #DDD;
+	padding: 10px 0 10px 0;
+}
+
+#page ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+/*
+INSTRUCCION:
+El siguiente elemento debe tener posición relativa, borde superior solido de un pixel y color BFB5A4 y color
+de fondo #F2EBDE;
+*/
+
+#page-bottom {
+	padding: 40px 40px 0 40px;
+	color: #302F2C;
+	width: 898px;
+	box-shadow: inset 0px 0px 0px 1px #fff;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.9);
+
+	position: relative;
+	border-top: 1px solid #BFB5A4;
+	background-color: #F2EBDE;
+}
+
+#page-bottom a {
+	color: #1B1A18;
+}
+
+#page-bottom h2, #page-bottom h3, #page-bottom h4 {
+	color: #3F3D39;
+}
+
+#page-bottom ul {
+	list-style: none;
+}
+
+#page-bottom ul li {
+	border-top: solid 1px #BAB5AB;
+	padding: 10px 0 10px 0;
+}
+
+#page-bottom ul li.first {
+	border-top: 0;
+	padding-top: 0;
+}
+
+#page-bottom-content {
+	width: 615px;
+	margin: 0 0 0 285px;
+}
+
+
+
+/*
+INSTRUCCION
+
+	El siguiente elemento debe tener borde sólido, de un pixel de ancho, de color D6E0E2
+
+*/
+
+#sidebar {
+	left: -20px;
+	top: -20px;
+	padding: 20px;
+    margin: 0 10px 0 0;
+	text-shadow: 1px 1px 0px rgba(255,255,255,1);
+	box-shadow: inset 0px 0px 0px 1px #fff;	
+
+	border: 1px solid #D6E0E2;
+}
+
+/*
+INSTRUCCION
+
+El siguiente elemento debe tener un ancho de 978 pixeles, posicion relativa, fondo blanco y borde sólido de un pixel de ancho
+
+*/
+
+#wrapper {
+	
+	margin: 0 auto 0 auto;
+	box-shadow: 0px 0px 150px 0px rgba(0,0,0,0.15);
+	border:  #82A7AD;
+	border-top: 0;
+
+	width: 978px;
+	position: relative;
+	background-color: #fff;
+	border: 1px solid ;
+}
+
+
+/* REGLAS DEL PDF*/
+
+p{
+	margin-bottom: 1.5em;
+}
+
+img.alignleft{
+	float: left;
+	margin: 5px 30px 20px 0;
+}
+
+#sidebar{
+	float: left;
+	position: relative;
+	width: 240px;
+}
+
+#page-bottom-sidebar{
+	float: left;
+	width: 250px;
+}
+
+a{
+	color: #2A3436;
+}
+
+#sidebar{
+	background-color: #EEF5F6;
+}
+
+#footer a{
+	color: #587477;
+}
+
+/* NEGRITA DEL DOCUMENTO WORD */
+.negrita{
+	font-weight: bold;
+}
