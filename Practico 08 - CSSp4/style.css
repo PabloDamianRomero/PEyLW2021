@@ -1,0 +1,128 @@
+/* La familia de fuentes debería ser: sans, "lucida grande", tahoma, verdana, sans-serif;
+El tamaño de la fuente debería ser de 11px.
+El fondo debería ser blanco.
+El color del texto debería ser negro.
+*/
+*{
+    font-family: 'sans', 'Lucida Grande', 'tahoma', 'verdana', 'sans-serif';
+    font-size: 11px;
+}
+
+/* Remueva el padding y el margin del elemento body. */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* El resto de los elementos de la página deberían utilizar el 80% restante. */
+#intro{
+    background-color: rgb(238, 245, 175);
+    width: 80%;
+    float: right;
+}
+
+#supportingText{
+    width: 80%;
+    background-color: rgb(189, 245, 175);
+    float: right;
+}
+
+/* #linkLists debería ser de un ancho de un 20% con respecto al navegador. */
+/* Mueva #linkLists al lado izquierdo de la página, a la misma altura de #intro. */
+#linkList{
+    width: 20%;
+    background-color: rgb(175, 245, 239);
+}
+
+/* h1 dentro de #pageHeader debería tener 10px de padding, un borde negro y de color
+de fondo el representado por #ddd. */
+
+/* h1 dentro de #pageHeader debería solaparse con h2 dentro de #pageHeader en 10px. */
+#pageHeader h1{
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #ddd;
+    position: relative; /* No se si pide esto así */
+    top: 10px; /* No se si pide esto así */
+}
+
+/* h2 dentro de #pageHeader debería tener un borde gris y 15px de padding. */
+#pageHeader h2{
+    border: 1px solid grey;
+    padding: 15px;
+}
+
+/* En el list de #lresources: 
+    - Eliminar los bullets.
+    - El color de fondo debería ser #9cf.
+    - Los links no deberían estar subrayados, deberían ser negrita y de color #036.
+    - Cuanto hay un hover de un link, el fondo del color deberia cambiar a #036, y el
+color de texto #9cf.
+*/
+
+#lresources{
+    background-color: #9cf;
+}
+
+#lresources li{
+    list-style: none;
+}
+
+#lresources a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #036;
+}
+
+#lresources a:hover{
+    background-color: #036;
+    color: #9cf;
+}
+
+/* En la lista de archivos, posicionar a “previous design” a la izquierda de “next design” y
+"view all designs" debajo de "next design". */
+
+#larchives ul{
+
+}
+
+#larchives li{
+    border: 1px solid rgba(0, 0, 0, 0.459);
+    width: 40%;
+}
+#larchives li:first-child{
+    float: right;
+}
+
+#larchives li:nth-child(2){
+    float: left;
+}
+
+#larchives li:last-child{
+    float: right;
+}
+
+
+/* Reemplace las bullets en #lselect con la imagen blue_bullet.gif */
+#lselect li{
+    list-style-image: url("blue_bullet.gif");
+}
+
+/* Reempace el texto de h1 en #pageHeader con la imagen css_zen_garden.gif */
+/* Posicione esta imagen de fondo a 10px desde el top top, y 10px desde el left del
+borde existente. */
+#pageHeader h1{
+    background-image: url("css_zen_garden.gif");
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 15%;
+}
+
+#pageHeader h1 span{
+    visibility: hidden;
+}
+
+/* Usar la imagen zen_h2_back.gif como el background de #pageHeader h2. */
+#pageHeader h2{
+    background-image: url("zen_h2_back.gif");
+}
