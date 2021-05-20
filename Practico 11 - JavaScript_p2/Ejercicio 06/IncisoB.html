@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06b JSp2</title>
+    <script type="text/javascript">
+        function valorSeleccionado($valor) {
+            var $salida;
+            if ($valor < 0) {
+                $salida = document.getElementById("retorno");
+                $salida.value += 'Valor Original: '+$valor+' ; Resp: '+-1 + '\n';
+            }else if (($valor >= 0) && ($valor< 10)) {
+                $salida = document.getElementById("retorno");
+                $salida.value += 'Valor Original: '+$valor+' ; Resp: '+0 + '\n';
+            }else if (($valor >= 10) && ($valor< 50)) {
+                $salida = document.getElementById("retorno");
+                $salida.value += 'Valor Original: '+$valor+' ; Resp: '+1 + '\n';
+            }else if (($valor >= 50) && ($valor< 100)) {
+                $salida = document.getElementById("retorno");
+                $salida.value += 'Valor Original: '+$valor+' ; Resp: '+2 + '\n';
+            }else{
+                $salida = document.getElementById("retorno");
+                $salida.value += 'Valor Original: '+$valor+' ; Resp: '+3 + '\n';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var $entrada;
+        $entrada = parseInt(prompt('Ingrese valor', 0));
+        
+    </script>
+    <button onclick="valorSeleccionado($entrada)">Ejecutar</button>
+    <h2>Resultado</h2>
+    <textarea id="retorno" name="salida" rows="10" cols="50"></textarea>
+</body>
+
+</html>

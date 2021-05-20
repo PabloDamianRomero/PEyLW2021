@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 05a JSp2</title>
+
+    <script type="text/javascript">
+        function suma($x, $y) {
+            var $suma, $salida; // Declaraci�n de Variables Locales
+            $suma = parseInt($x) + parseInt($y);
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' + ' + $y + ' = ' + $suma + '\n'; //agrega al text area el relsultado de la suma
+        }
+
+        function resta($x, $y) {
+            var $resta, $salida; // Declaraci�n de Variables Locales
+            $resta = parseInt($x) - parseInt($y);
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' - ' + $y + ' = ' + $resta + '\n'; //agrega al text area el relsultado de la suma
+        }
+
+        function division($x, $y) {
+            var $div, $salida; // Declaraci�n de Variables Locales
+            $div = parseInt($x) / parseInt($y);
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' / ' + $y + ' = ' + $div + '\n'; //agrega al text area el relsultado de la suma
+        }
+
+        function multiplicacion($x, $y) {
+            var $mult, $salida; // Declaraci�n de Variables Locales
+            $mult = parseInt($x) * parseInt($y);
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' * ' + $y + ' = ' + $mult + '\n'; //agrega al text area el relsultado de la suma
+        }
+
+        function potencia($x, $y) {
+            var $pot, $salida; // Declaraci�n de Variables Locales
+            $pot = Math.pow(parseInt($x), parseInt($y));
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' ^ ' + $y + ' = ' + $pot + '\n'; //agrega al text area el relsultado de la suma
+        }
+
+        function cuadrado($x) {
+            var $cuad, $salida; // Declaraci�n de Variables Locales
+            $cuad = Math.sqrt($x);
+            $salida = document.getElementById("salida");
+            $salida.value += 'Raíz cuadrada de ' + $x + ' = ' + $cuad + '\n'; //agrega al text area el relsultado de la suma
+        }
+    </script>
+</head>
+
+<body>
+    <!-- El tag a (Suma) esta vinculado a la funcion suma -->
+    <script type="text/javascript">
+        var $x, $y;
+        $x = prompt('valor1=', 0);
+        $y = prompt('valor2=', 0);
+    </script>
+    <button onclick="suma($x, $y)">Sumar</button>
+    <button onclick="resta($x, $y)">Restar</button>
+    <button onclick="division($x, $y)">Dividir</button>
+    <button onclick="multiplicacion($x, $y)">Multiplicar</button>
+    <button onclick="potencia($x, $y)">Potencia</button>
+    <button onclick="cuadrado($x)">Raiz cuadrada</button>
+
+    <h2> Resultados</h2>
+
+    <textarea id="salida" name="salida" rows="10" cols="50"></textarea>
+
+</body>
+
+</html>

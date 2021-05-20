@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07d JSp2</title>
+    <script type="text/javascript">
+
+        function factorial($x) {
+            var $resultado;
+            if($x != 0){
+                $resultado = $x * factorial($x-1);
+            }else{
+                $resultado = 1;
+            }
+            return $resultado;
+        }
+
+        function pedirDatos() {
+            var $num, $calculo, $salida;
+            $num = parseInt(prompt("Ingrese valor", 0));
+            $calculo = factorial($num);
+            $salida = document.getElementById('resultadoEnDiv');
+            $salida.innerHTML += "<br><p> Factorial de "+$num+": "+$calculo+"</p>";
+        }
+
+    </script>
+</head>
+
+<body onload="pedirDatos()">
+    <p>Desarrollar la función factorial(n). Agregar la función a la calculadora del ejercicio 5.</p>
+    <p>factorial(0) = 1.</p>
+    <p>factorial(n) = n * factorial(n-1).</p>
+    <div id="resultadoEnDiv">
+
+    </div>
+
+</body>
+
+</html>

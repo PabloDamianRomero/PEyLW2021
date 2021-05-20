@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07e JSp2</title>
+    <script type="text/javascript">
+
+        function listarPrimos() {
+            var $calculo, $salida, $valor, $esPrimo;
+            $salida = document.getElementById('numerosPrimos');
+            $salida.innerHTML = "<ul>";
+
+            for (var $i = 2; $i < 100; $i++) {
+                $valor = 2;
+                $esPrimo = true;
+                while (($esPrimo) && ($valor < $i)) {
+                    if (($i % $valor) == 0) {
+                        $esPrimo = false;
+                    } else {
+                        $valor++;
+                    }
+                }
+                if ($esPrimo) {
+                    $salida.innerHTML += "<li>" + $i + "</li>";
+                }
+            }
+            $salida.innerHTML += "</ul>";
+
+        }
+
+    </script>
+</head>
+
+<body onload="listarPrimos()">
+    <p>Desarrollar una página que liste dentro de un div todos los números primos menores a 100.</p>
+    <div id="numerosPrimos">
+
+    </div>
+
+</body>
+
+</html>

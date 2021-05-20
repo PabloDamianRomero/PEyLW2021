@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08a JSp2</title>
+    <script type="text/javascript">
+
+        function pintar($objeto, $color) {
+            $objeto.style.backgroundColor = $color;
+            if(($color == "black")|| ($color == "blue") || ($color == "red")){
+                colorTexto($objeto, '#fff');
+            }else if($color == "rgb(211, 211, 211)"){
+                colorTexto($objeto, '#000');
+            }
+        }
+
+        function colorTexto($objeto, $color){
+            $objeto.style.color = $color;
+        }
+    </script>
+</head>
+
+<body style="background-color: rgb(211, 211, 211);">
+    <p>Capturar el evento cuando el Mouse pasa por encima de cada item y llamar a una función que modifique el color de
+        fondo de la lista, por el color sobre el cual está posicionado el Mouse.</p>
+
+    <ul>
+        <li onmouseover="pintar(this, 'white')" onmouseout="pintar(this, 'rgb(211, 211, 211)')">Blanco</li>
+        <li onmouseover="pintar(this, 'black')" onmouseout="pintar(this, 'rgb(211, 211, 211)')">Negro</li>
+        <li onmouseover="pintar(this, 'blue')" onmouseout="pintar(this, 'rgb(211, 211, 211)')">Azul</li>
+        <li onmouseover="pintar(this, 'red')" onmouseout="pintar(this, 'rgb(211, 211, 211)')">Rojo</li>
+        <li onmouseover="pintar(this, 'yellow')" onmouseout="pintar(this, 'rgb(211, 211, 211)')">Amarillo</li>
+    </ul>
+
+</body>
+
+</html>

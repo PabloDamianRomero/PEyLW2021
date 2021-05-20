@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07a JSp2</title>
+    <script type="text/javascript">
+        function calendario() {
+            var $colMeses, $longitud, $salida;
+            $colMeses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+            $longitud = $colMeses.length;
+
+            for (var $i = 0; $i < $longitud; $i++) {
+                $salida = document.getElementById('listaMes1');
+                $salida.innerHTML += "<li>" + $colMeses[$i] + "</li>"; // La propiedad Element.innerHTML devuelve o establece la sintaxis HTML describiendo los descendientes del elemento.
+            }
+
+            var $j = 0;
+            while ($j < $longitud) {
+                $salida = document.getElementById('listaMes2');
+                $salida.innerHTML += "<li>" + $colMeses[$j] + "</li>";
+                $j++;
+            }
+
+            var $k = 0;
+            do {
+                $salida = document.getElementById('listaMes3');
+                $salida.innerHTML += "<li>" + $colMeses[$k] + "</li>";
+                $k++;
+            } while ($k < $longitud);
+
+            for ($iterador in $colMeses) {
+                $salida = document.getElementById('listaMes4');
+                $salida.innerHTML += "<li>" + $colMeses[$iterador] + "</li>";
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="calendario()">
+    <p>Desarrollar una página con una lista no ordenada &lt;ul&gt; con los meses calendario. Los meses deben ser
+        impresos desde una variable array.</p>
+    <table cellpadding="20%">
+        <tr>
+            <td>
+                <p>Lista desordenada con recorrido for</p>
+                <ul id="listaMes1">
+                </ul>
+            </td>
+            <td>
+                <p>Lista desordenada con recorrido while</p>
+                <ul id="listaMes2">
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Lista desordenada con recorrido do while</p>
+                <ul id="listaMes3">
+                </ul>
+            </td>
+            <td><p>Lista desordenada con recorrido for in</p>
+                <ul id="listaMes4">
+                </ul></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</body>
+
+</html>

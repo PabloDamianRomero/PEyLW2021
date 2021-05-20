@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07b JSp2</title>
+    <script type="text/javascript">
+
+        function paresMenorAQuinientos() {
+            var $par, $salida;
+            $salida = document.getElementById('numerosPares');
+            $salida.innerHTML +="<p>";
+            for (var $i = 0; $i < 500; $i++) {
+                if(($i % 2)==0){
+                    $salida.innerHTML += ' '+ $i;
+                }
+            }
+            $salida.innerHTML +="</p>";
+        }
+
+    </script>
+</head>
+
+<body onload="paresMenorAQuinientos()">
+    <p>Desarrollar página que muestre dentro de un div todos los números pares menores que 500</p>
+    <div id="numerosPares">
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

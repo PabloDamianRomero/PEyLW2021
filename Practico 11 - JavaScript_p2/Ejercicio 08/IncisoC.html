@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08c JSp2</title>
+    <script type="text/javascript">
+
+        function detectar() {
+            var $resultado;
+            $resultado = navigator.appName;
+            switch ($resultado) {
+                case 'Microsoft Internet Explorer':
+                    document.write($resultado);
+                    window.open('http://www.microsoft.com/ie');
+                    break;
+                case 'Firefox':
+                    document.write($resultado);
+                    window.open('http://www.mozilla.com/firefox/');
+                    break;
+                case 'Konkeror':
+                    document.write($resultado);
+                    window.open('http://konqueror.org');
+                    break;
+                case 'Netscape':
+                    document.write($resultado);
+                    window.open('https://faiweb.uncoma.edu.ar/');
+                    break;
+                default:
+                    document.write($resultado);
+                    document.write('<br>Browser desconocido.');
+                    break;
+            }
+        }
+
+
+    </script>
+</head>
+
+<body onload="detectar()">
+    <p>Desarrollar una página que detecte el browser cliente. Luego:</p>
+    <ul>
+        <li>si el browser es ‘Microsoft Internet Explorer’ redireccionar la página a http://www.microsoft.com/ie</li>
+        <li>si el browser es ‘Firefox’ redireccionar la página a http://www.mozilla.com/firefox/</li>
+        <li>si el browser es ‘Konkeror’ redireccionar la página a http://konqueror.org</li>
+        <li>si es otro escribir en pantalla ‘browser desconocido’.</li>
+
+    </ul>
+</body>
+
+</html>

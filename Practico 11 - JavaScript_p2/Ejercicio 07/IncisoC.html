@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07c JSp2</title>
+    <script type="text/javascript">
+
+        function formula($x) {
+            var $resultado;
+            $resultado = (3 * $x) + 5 - (Math.pow($x, 2));
+            return $resultado;
+        }
+
+        function primerosCien() {
+            var $salida, $calculo;
+            $salida = document.getElementById('resultado');
+            $salida.innerHTML += "<p>";
+            for (var $i = 0; $i < 100; $i++) {
+                $calculo = formula(parseInt($i));
+                $salida.innerHTML += " "+$calculo;
+            }
+            $salida.innerHTML += "</p>";
+        }
+
+    </script>
+</head>
+
+<body onload="primerosCien()">
+    <p>Desarrollar una página que muestre dentro de un div los primeros 100 números de la función f(x) = 3 * x + 5 – x^2</p>
+    <div id="resultado">
+
+    </div>
+
+</body>
+
+</html>

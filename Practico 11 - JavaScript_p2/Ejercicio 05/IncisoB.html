@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 05b JSp2</title>
+
+    <script type="text/javascript">
+        function valorSeleccionado($valor) {
+            var $salida;
+            if ($valor < 0) {
+                $salida = document.getElementById("salida");
+                $salida.value += 'Valor Original: ' + $valor + ' ; Seleccionado(if): ' + -1 + '\n\n';
+            } else if (($valor >= 0) && ($valor < 10)) {
+                $salida = document.getElementById("salida");
+                $salida.value += 'Valor Original: ' + $valor + ' ; Seleccionado(if): ' + 0 + '\n\n';
+            } else if (($valor >= 10) && ($valor < 50)) {
+                $salida = document.getElementById("salida");
+                $salida.value += 'Valor Original: ' + $valor + ' ; Seleccionado(if): ' + 1 + '\n\n';
+            } else if (($valor >= 50) && ($valor < 100)) {
+                $salida = document.getElementById("salida");
+                $salida.value += 'Valor Original: ' + $valor + ' ; Seleccionado(if): ' + 2 + '\n\n';
+            } else {
+                $salida = document.getElementById("salida");
+                $salida.value += 'Valor Original: ' + $valor + ' ; Seleccionado(if): ' + 3 + '\n\n';
+            }
+        }
+
+        function suma() {
+            var $x, $y, $suma, $salida;// Declaraci�n de Variables Locales
+            $x = prompt('valor1=', 0);
+            $y = prompt('valor2=', 0);
+            $suma = parseInt($x) + parseInt($y);
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' + ' + $y + ' = ' + $suma + '\n'; //agrega al text area el relsultado de la suma
+            valorSeleccionado($suma);
+        }
+
+        function resta() {
+            var $x, $y, $resta, $salida;// Declaraci�n de Variables Locales
+            $x = prompt('valor1=', 0);
+            $y = prompt('valor2=', 0);
+            $resta = parseInt($x) - parseInt($y);
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' - ' + $y + ' = ' + $resta + '\n'; //agrega al text area el relsultado de la suma
+            valorSeleccionado($resta);
+        }
+
+        function division() {
+            var $x, $y, $div, $salida;// Declaraci�n de Variables Locales
+            $x = prompt('valor1=', 0);
+            $y = prompt('valor2=', 0);
+            $div = parseInt($x) / parseInt($y);
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' / ' + $y + ' = ' + $div + '\n'; //agrega al text area el relsultado de la suma
+            valorSeleccionado($div);
+        }
+
+        function multiplicacion() {
+            var $x, $y, $mult, $salida;// Declaraci�n de Variables Locales
+            $x = prompt('valor1=', 0);
+            $y = prompt('valor2=', 0);
+            $mult = parseInt($x) * parseInt($y);
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' * ' + $y + ' = ' + $mult + '\n'; //agrega al text area el relsultado de la suma
+            valorSeleccionado($mult);
+        }
+
+        function potencia() {
+            var $x, $y, $pot, $salida;// Declaraci�n de Variables Locales
+            $x = prompt('valor1=', 0);
+            $y = prompt('valor2=', 0);
+            $pot = Math.pow(parseInt($x), parseInt($y));
+            $salida = document.getElementById("salida");
+            $salida.value += $x + ' ^ ' + $y + ' = ' + $pot + '\n'; //agrega al text area el relsultado de la suma
+            valorSeleccionado($pot);
+        }
+
+        function cuadrado() {
+            var $x, $cuad, $salida;// Declaraci�n de Variables Locales
+            $x = prompt('valor1=', 0);
+            $cuad = Math.sqrt($x);
+            $salida = document.getElementById("salida");
+            $salida.value += 'Raíz cuadrada de ' + $x + ' = ' + $cuad + '\n'; //agrega al text area el relsultado de la suma
+            valorSeleccionado($cuad);
+        }
+    </script>
+</head>
+
+<body>
+
+    <button onclick="suma()">Sumar</button>
+    <button onclick="resta()">Restar</button>
+    <button onclick="division()">Dividir</button>
+    <button onclick="multiplicacion()">Multiplicar</button>
+    <button onclick="potencia()">Potencia</button>
+    <button onclick="cuadrado()">Raiz cuadrada</button>
+
+    <h2> Resultados</h2>
+
+    <textarea id="salida" name="salida" rows="10" cols="50"></textarea>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08b JSp2</title>
+    <script type="text/javascript">
+
+
+        function ocultar($idProv, $idCiud) {
+            var $provincia, $ciudades, $oculto;
+
+            $ciudades = document.getElementById($idCiud);
+            $oculto = $ciudades.style.getPropertyValue('visibility');
+            if ($oculto == '') {
+                $oculto = $ciudades.style.visibility = 'hidden';
+                $provincia = document.getElementById($idProv);
+                $provincia.style.textDecoration = 'underline';
+            } else if ($oculto == 'hidden') {
+                $oculto = $ciudades.style.visibility = '';
+                $provincia = document.getElementById($idProv);
+                $provincia.style.textDecoration = '';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li id="nqn">
+            Neuquén <button onclick="ocultar('nqn','ciudadesNqn')">_</button>
+            <ul id="ciudadesNqn">
+                <li>Neuquén</li>
+                <li>Zapala</li>
+                <li>San Martin</li>
+                <li>Junin</li>
+            </ul>
+        </li>
+        <li id="rn">
+            Rio Negro <button onclick="ocultar('rn','ciudadesRN')">_</button>
+            <ul id="ciudadesRN">
+                <li>Cipolletti</li>
+                <li>Fernandez Oro</li>
+                <li>Roca</li>
+                <li>Cinco Saltos</li>
+                <li>Allen</li>
+            </ul>
+        </li>
+        <li id="bsas">
+            Buenos Aires <button onclick="ocultar('bsas','ciudadesBsAs')">_</button>
+            <ul id="ciudadesBsAs">
+                <li>La Plata</li>
+                <li>Mar del Plata</li>
+                <li>Necochea</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

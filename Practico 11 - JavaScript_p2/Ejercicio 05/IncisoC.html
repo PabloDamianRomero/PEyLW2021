@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 05c JSp2</title>
+
+    <script type="text/javascript">
+        function pesoADolar() {
+            var $valorPeso, $valorDolar, $conversion, $salida;// Declaraci�n de Variables Locales
+            $valorPeso = prompt('Cantidad en pesos =', 0);
+            $valorDolar = prompt('Precio de dolar actual=', 0);
+            $conversion = parseInt($valorPeso * 1) / parseInt($valorDolar);
+            $salida = document.getElementById("salida");
+            $salida.value += $valorPeso + '(pesos) equivalen a '+$conversion+'(dolares) , con un dolar actual a '+$valorDolar+'(pesos arg)\n';
+        }
+
+        function dolarAPeso() {
+            var $valorPeso, $valorDolar, $conversion, $salida;// Declaraci�n de Variables Locales
+            $valorDolar = prompt('Precio de dolar actual (en pesos)=', 0);
+            $valorPeso = prompt('Cantidad en dólares =', 0);
+            $conversion = parseInt($valorDolar * $valorPeso);
+            $salida = document.getElementById("salida");
+            $salida.value += $valorPeso + '(pesos) equivalen a '+$conversion+'(dolares) , con un dolar actual a '+$valorDolar+'(pesos arg)\n';
+        }
+    </script>
+</head>
+
+<body>
+
+    <button onclick="pesoADolar()">Convertir de pesos a dólares</button>
+    <button onclick="dolarAPeso()">Convertir de dólares a pesos</button>
+
+
+    <h2> Resultados</h2>
+
+    <textarea id="salida" name="salida" rows="10" cols="90"></textarea>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08d JSp2</title>
+    <script type="text/javascript">
+
+        function versionBrowser() {
+            var $resultado, $salida;
+            $salida = document.getElementById('version');
+            $resultado = navigator.appVersion;
+            $salida.innerHTML += $resultado;
+        }
+
+
+    </script>
+</head>
+
+<body onload="versionBrowser()">
+    <p>Desarrollar una página que alerte al usuario si la versión del browser no es la última.</p>
+    <p id="version"></p>
+</body>
+
+</html>
