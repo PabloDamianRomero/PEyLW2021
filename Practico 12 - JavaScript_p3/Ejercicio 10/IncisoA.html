@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10a JSp3</title>
+    <script type="text/javascript">
+
+        function funcionTiempo() {
+            var $lugar1, $lugar2, $objFecha, $fecha, $hora, $faltanDias, $faltanHs, $faltanMin, $faltanSeg;
+            $lugar1 = document.getElementById('resultado1');
+            $lugar2 = document.getElementById('resultado2');
+            $objFecha = new Date();
+            $hora = $objFecha.getHours() + ":" + $objFecha.getMinutes() + ":" + $objFecha.getSeconds();
+            $fecha = $objFecha.getDate() + "/" + $objFecha.getMonth() + "/" + $objFecha.getFullYear();
+            $lugar1.innerHTML = "<p>"+$fecha+" --- "+$hora+"</p>";
+            
+            $faltanDias = 15 - $objFecha.getDate();
+            
+            $lugar2.innerHTML = "<p> Faltan "+Math.abs($faltanDias)+" dias para el parcial </p>";
+        }
+
+    </script>
+</head>
+
+<body onload="funcionTiempo();">
+    <div class="enunciado" style="background-color: rgb(180, 223, 248); padding: 20px;">
+        <h2>Ejercicio 10a: Date</h2>
+        <p>Desarrollar una página que imprima en pantalla: </p>
+        <ul>
+            <li>La Fecha actual, la hora, minutos y segundos</li>
+            <li>La cantidad de días, horas, minutos y segundos que faltan para el parcial de javascript.</li>
+        </ul>
+    </div>
+
+
+    <div id="resultado1" style="background-color: rgb(239, 248, 180); padding: 20px;">
+
+    </div>
+
+    <div id="resultado2" style="background-color: rgb(250, 230, 200); padding: 20px;">
+
+    </div>
+
+</body>
+
+</html>

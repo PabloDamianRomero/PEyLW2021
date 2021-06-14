@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 JSp3</title>
+    <script type="text/javascript">
+
+        function funcionString() {
+            var $elem, $lugar;
+            $elem = document.getElementById('iText').value;
+            $lugar = document.getElementById('resultado');
+            if ($elem != "") { // Si el campo de texto no está vacio
+                $lugar.innerHTML = "<ol id='lista' >";
+                aMayuscula($elem);
+                aMinuscula($elem);
+                subMensaje($elem);
+                holaIncluido($elem);
+                sinEspaciosNiHola($elem);
+                traducir($elem);
+                $lugar.innerHTML += "</ol>";
+            } else {
+                alert("Debe ingresar un mensaje");
+            }
+        }
+
+        function aMayuscula($cadena) {
+            var $lugar, $conversion;
+            $lugar = document.getElementById('lista');
+            $conversion = $cadena.toUpperCase(); // toUpperCase(): devuelve el string en Mayúscula.
+            $lugar.innerHTML += "<li>" + $conversion + "</li>";
+        }
+
+        function aMinuscula($cadena) {
+            var $lugar, $conversion;
+            $lugar = document.getElementById('lista');
+            $conversion = $cadena.toLowerCase(); // toLowerCase(): devuelve el string en Minúscula.
+            $lugar.innerHTML += "<li>" + $conversion + "</li>";
+        }
+
+        function subMensaje($cadena) {
+            var $lugar, $conversion;
+            $lugar = document.getElementById('lista');
+            $conversion = $cadena.substr(5, 10); // substr(start,length): devuelve el sub string de largo length que comienza en start.
+            $lugar.innerHTML += "<li>" + $conversion + "</li>";
+        }
+
+        function holaIncluido($cadena) {
+            var $lugar, $conversion;
+            $cadena = $cadena.toLowerCase();
+            $lugar = document.getElementById('lista');
+            $conversion = $cadena.replace("hola", "hola como estas"); // replace(cad1, cad2): devuleve el string resultante de cambiar cad2 por cada ocurrencia de cad1.
+            $lugar.innerHTML += "<li>" + $conversion + "</li>";
+        }
+
+        function sinEspaciosNiHola($cadena) {
+            var $lugar, $conversion, $largoCadena, $i, $caracter;
+            $cadena = $cadena.toLowerCase();
+            $lugar = document.getElementById('lista');
+            $cadenaSinHola = $cadena.replace("hola", " ");
+            $largoCadena = $cadenaSinHola.length;
+            $conversion = "";
+            for ($i = 0; $i < $largoCadena; $i++) {
+                $caracter = $cadenaSinHola[$i];
+                if ($caracter != " ") {
+                    $conversion += $caracter;
+                }
+            }
+            $lugar.innerHTML += "<li>" + $conversion + "</li>";
+        }
+
+        function traducir($cadena) {
+            var $lugar, $conversion;
+            $cadena = $cadena.toLowerCase();
+            $lugar = document.getElementById('lista');
+            $conversion = $cadena.replace("hello", "hola"); // replace(cad1, cad2): devuleve el string resultante de cambiar cad2 por cada ocurrencia de cad1.
+            $conversion = $conversion.replace("name", "nombre"); // replace(cad1, cad2): devuleve el string resultante de cambiar cad2 por cada ocurrencia de cad1.
+            $conversion = $conversion.replace("my", "mi"); // replace(cad1, cad2): devuleve el string resultante de cambiar cad2 por cada ocurrencia de cad1.
+            $lugar.innerHTML += "<li>" + $conversion + "</li>";
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="enunciado" style="background-color: rgb(180, 223, 248); padding: 20px;">
+        <h2>Ejercicio 09: String</h2>
+        <p>Desarrollar una página que pida al usuario que ingrese un mensaje y sea escrito en pantalla en: </p>
+        <ul>
+            <li>Mayúscula</li>
+            <li>Minúscula</li>
+            <li>Solo el sub-mensaje que comienza el la posición 5 y de largo 10.</li>
+            <li>Si la palabra hola está incluida dentro del mensaje escribir por pantalla “hola que tal”.</li>
+            <li>El mismo mensaje pero sin espacios en blanco. Y eliminado la palabra hola.</li>
+            <li>El mismo mensaje pero traduciendo al ingles las palabras: my por mi, hello por hola, name por nombre,
+                .... Etc.</li>
+        </ul>
+    </div>
+    <div class="contenido" style="background-color: rgb(180, 248, 216); padding: 20px;">
+        <input type="text" name="iText" id="iText" placeholder="Ingrese un mensaje" size="40" maxlength="40"
+            autocomplete="off">
+        <input type="button" id="iEjecutar" value="Ejecutar" onclick="funcionString();">
+    </div>
+
+    <div id="resultado" style="background-color: rgb(239, 248, 180); padding: 20px;">
+
+    </div>
+
+</body>
+
+</html>

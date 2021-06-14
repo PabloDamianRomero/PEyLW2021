@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10b JSp3</title>
+    <script type="text/javascript">
+
+        function calcularEdad() {
+            var $valor, $anioActual, $edad, $lugar;
+            $valor = prompt("Ingrese su año de nacimiento");
+            $anioActual = new Date();
+            $edad = $anioActual.getFullYear() - $valor;
+            $lugar = document.getElementById('resultado');
+            $lugar.innerHTML = "<p> Si nació en " + $valor + " su edad debe ser " + $edad + " años </p>";
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="enunciado" style="background-color: rgb(180, 223, 248); padding: 20px;">
+        <h2>Ejercicio 10b: Date</h2>
+        <p>Desarrollar una página que al hacer click sobre un botón “calcular edad”, le pida al usuario su año de
+            nacimiento y luego imprima por pantalla el mensaje “su edad es XX”. </p>
+    </div>
+
+    <div class="contenido" style="background-color: rgb(180, 248, 216); padding: 20px;">
+        <input type="button" id="iEjecutar" value="Calcular Edad" onclick="calcularEdad();">
+    </div>
+
+
+    <div id="resultado" style="background-color: rgb(239, 248, 180); padding: 20px;">
+
+    </div>
+
+
+</body>
+
+</html>
