@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13 JSp3</title>
+    <script type="text/javascript">
+
+        function iniciarTabla() {
+            var datosIniciales = new Array();
+            datosIniciales[0] = ["Juan Perez", "Av. Argentina 300", "Neuquén Capital", "154888888"];
+            datosIniciales[1] = ["Tito Sanchez", "Av. Del Trabajador 300", "Neuquén Capital", "154555555"];
+            datosIniciales[2] = ["Cecilia Carrizo", "Sierra Grande 900", "Neuquén Capital", "4485895"];
+            datosIniciales[3] = ["Pedro Gonzales", "Amaranto Suarez 1254", "Neuquén Capital", "4420444"];
+            var myTable = document.getElementById('myTable');
+            for (i in datosIniciales) {
+                insertarRow(datosIniciales[i][0], datosIniciales[i][1], datosIniciales[i][2], datosIniciales[i][3]);
+                /**
+                 * datosIniciales[i][0] = datosIniciales[0..3][nombre]
+                 * datosIniciales[i][1] = datosIniciales[0..3][direccion]
+                 * ...
+                 */
+            }
+        }
+
+        function insertarRow(Nombre, Direccion, Ciudad, Telefono) {
+            if ((Nombre != "") && (Direccion != "") && (Ciudad != "") && (Telefono != "")) { // Si campos no estan vacios
+                var myTable = document.getElementById("iTabla");
+                var row = myTable.insertRow(myTable.rows.length);
+                var cel0 = row.insertCell(0); // insertCell(indice). Inserta una celda en la posición indice.
+                var cel1 = row.insertCell(1);
+                var cel2 = row.insertCell(2);
+                var cel3 = row.insertCell(3);
+                var cel4 = row.insertCell(4);
+                cel0.innerHTML = Nombre;
+                cel1.innerHTML = Direccion;
+                cel2.innerHTML = Ciudad;
+                cel3.innerHTML = Telefono;
+                cel4.innerHTML = "<a href='#' onclick='borrarRow(this.parentNode.parentNode.rowIndex);'>borrar</a>";
+            } else {
+                alert("CAMPOS VACIOS");
+            }
+
+        }
+
+        function borrarRow(Numero) {
+            var myTable = document.getElementById("iTabla");
+            myTable.deleteRow(Numero); // deleteRow(indice). Borra la fila que se encuentra en la posición indice.
+        }
+
+    </script>
+</head>
+
+<body onload="iniciarTabla();">
+    <!-- ENUNCIADO -->
+    <div class="enunciado"
+        style="background-color: rgb(180, 223, 248); padding: 20px; display: inline-block; width: 600px; position: absolute;">
+        <h2>Ejercicio 13: Table</h2>
+        <p>Desarrollar una página de título Agenda con las siguientes características.</p>
+        <ul>
+            <li>Llenaruna tabla con el siguiente Array. Nombre, Dirección, Ciudad y Telefono</li>
+        </ul>
+        <img src="array.PNG">
+        <ul>
+            <li>La tabla tiene que tener la posibilidad de Eliminar cualquier fila haciendo click sobre el link borrar.
+            </li>
+            <li>Llenando los datos del formulario y haciendo click sobre el botón Nuevo Registro sedebe agregar una
+                nueva línea al final de la tabla</li>
+        </ul>
+        <img src="agenda.PNG" width="550px">
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- CONTENIDO -->
+
+    <div id="contenido"
+        style="background-color: rgb(180, 248, 216); padding: 20px; display: inline-block; width: 600px; position: absolute; left: 648px;">
+
+        <h2>Agenda</h2>
+        Nombre <input type="text" name="iNombre" id="iNombre"> <br>
+        Direccion <input type="text" name="iDir" id="iDir"> <br>
+        Ciudad <input type="text" name="iCiudad" id="iCiudad"> <br>
+        Telefono <input type="text" name="iTel" id="iTel"> <br>
+        <input type="button" id="iNuevo" value="Nuevo Registro"
+            onclick="insertarRow(document.getElementById('iNombre').value,document.getElementById('iDir').value, document.getElementById('iCiudad').value, document.getElementById('iTel').value);">
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- RESULTADO -->
+
+    <div id="resultado"
+        style="background-color: rgb(202, 248, 180); padding: 20px; display: inline-block; width: 600px; position: absolute; top: 230px; left: 648px;">
+
+        <table id="iTabla" border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Ciudad</th>
+                <th>Telefono</th>
+                <th>Operacion</th>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

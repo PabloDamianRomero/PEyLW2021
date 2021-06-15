@@ -1,14 +1,11 @@
-<!-- TODO:
-- Ejecutar en browser
-- modificar html y visualizar
- -->
+
 <html>
 <head>
 <title>TITULO</title>
 <script type="text/javascript">
 /*
-Esta función recorre todos los objetos hijos del objeto que entra
-como parámetro de tipo Element y text.
+Esta funciï¿½n recorre todos los objetos hijos del objeto que entra
+como parï¿½metro de tipo Element y text.
 */
 function DOM(objeto){
 	//Dependiendo del tipo de nodo muestra diferentes propiedades
@@ -22,7 +19,7 @@ function DOM(objeto){
 			objeto.style.backgroundColor="";
 			//le asigno a la variable a el arreglo de nodos hijos
 			var a=objeto.childNodes
-			//para cada uno de los nodos hijos ejecuto la función DOM
+			//para cada uno de los nodos hijos ejecuto la funciï¿½n DOM
 			for(i in a)
 				DOM(a[i]);
 			break;

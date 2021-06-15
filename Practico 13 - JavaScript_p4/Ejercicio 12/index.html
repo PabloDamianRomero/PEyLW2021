@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12 JSp3</title>
+    <script type="text/javascript">
+
+        function funcionListar($obj) {
+            switch ($obj.nodeType) {
+                case 1:
+                    alert("Elemento Node type:" + $obj.nodeType + "\nTag name:" + $obj.tagName + "\n" + $obj.innerHTML);
+                    var $a = $obj.childNodes;
+                    for ($i in $a) {
+                        funcionListar($a[$i]);
+                    }
+                    break;
+                case 3:
+                    var $padre = $obj.parentNode;
+                    if ($padre.tagName == "LI") {
+                        $padre.style.backgroundColor = "rgb(84 84 84)";
+                    }
+                    // alert("Texto Node type:" + $obj.nodeType + "\nnode Value:" + $obj.nodeValue);
+                    break;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="enunciado"
+        style="background-color: rgb(180, 223, 248); padding: 20px; display: inline-block; width: 220px;">
+        <h2>Ejercicio 12: DOM</h2>
+        <p>Dado el siguiente árbol implementado con &lt;ul&gt;.</p>
+        <ul>
+            <li>Al hacer click sobre el botón listar, recorrer por completo el árbol utilizando la propiedad childNode[]
+                de cada nodo padre. Por cada nodo hacer un alert con su contenido y cambiarlo acolor a gris.</li>
+        </ul>
+        <img src="ej12.PNG">
+    </div>
+    <div id="contenido" style="background-color: rgb(180, 248, 216); padding: 20px; display: inline-block;">
+        <ul>
+            <li>Menu 1</li>
+            <ul>
+                <li>Item 1</li>
+                <ul>
+                    <li>Item a</li>
+                    <li>Item b</li>
+                </ul>
+                <li>Item 2</li>
+            </ul>
+            <li>Menu 2</li>
+            <ul>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </ul>
+        <input type="button" id="iListar" value="Listar"
+            onclick="funcionListar(document.getElementById('contenido').childNodes[1]);">
+    </div>
+
+</body>
+
+</html>
