@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 JSp5</title>
+    <script type="text/javascript">
+
+        function esPrimo($valor) {
+            var $salida, $i, $esPrimo;
+            $salida = document.getElementById('resultado');
+            $valor = parseInt($valor);
+            $i = 2;
+            $esPrimo = true;
+            if (($valor == 0) || ($valor == 1)) {
+                $esPrimo = false;
+            }
+            while (($i < $valor) && ($esPrimo)) {
+                if (($valor % $i) == 0) {
+                    $esPrimo = false;
+                }
+                $i++;
+            }
+
+            if ($esPrimo) {
+                $salida.innerHTML = "<strong>" + $valor + " ES primo </strong>"
+            } else {
+                $salida.innerHTML = "<strong>" + $valor + " NO ES primo </strong>"
+            }
+        }
+
+    </script>
+</head>
+
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(48, 48, 48);">
+    <!-- ENUNCIADO -->
+    <div class="enunciado" style="background-color: rgb(195, 228, 247); padding: 20px;">
+        <h2>PRACTICO 5 JavaScript</h2>
+        <p>Desarrollar una función “EsPrimo” y un HTML de prueba que, dado un número, nos indique si el número ingresado
+            es primo o no.</p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- CONTENIDO -->
+
+    <div id="contenido" style="background-color: rgb(205, 252, 230); padding: 20px;">
+
+        <input type="text" name="iNum" id="iNum" placeholder="Ingrese numero">
+        <input type="submit" value="Validar" onclick="esPrimo(document.getElementById('iNum').value);">
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- RESULTADO -->
+
+    <div id="resultado" style="background-color: rgb(222, 250, 209); padding: 20px;">
+
+    </div>
+
+</body>
+
+</html>

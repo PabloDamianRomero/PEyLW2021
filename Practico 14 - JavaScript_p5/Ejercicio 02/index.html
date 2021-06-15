@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 JSp5</title>
+    <script type="text/javascript">
+
+        function cambiar_aDia() {
+            var $lugar;
+            $lugar = document.getElementById('contenido');
+            $lugar.style.backgroundColor = 'rgb(238, 238, 238)';
+            $lugar.style.color = '#000';
+        }
+
+        function cambiar_aNoche() {
+            var $lugar;
+            $lugar = document.getElementById('contenido');
+            $lugar.style.backgroundColor = '#454761';
+            $lugar.style.color = '#E0E0E0';
+        }
+
+    </script>
+</head>
+
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(48, 48, 48);">
+    <!-- ENUNCIADO -->
+    <div class="enunciado" style="background-color: rgb(195, 228, 247); padding: 20px;">
+        <h2>PRACTICO 5 JavaScript</h2>
+        <p>Diseñe una página o elija una página de algún práctico anterior y agréguele la posibilidad de tener un
+            intercambio utilizando un botón entre modo “Día” y modo “nocturno” al estilo twitter o Reddit</p>
+        <p>Por ejemplo:</p>
+        <img src="darkMode.PNG" width="250">
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- CONTENIDO -->
+
+    <div id="contenido"
+        style="background-color: rgb(238, 238, 238); padding: 20px; border:1px solid rgb(17, 92, 255); position: relative;">
+        <h2 style="text-align: center;">Lorem Ipsum</h2>
+        <h4 style="text-align: center;"><cite>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit..."</cite></h4>
+        <h5 style="text-align: center;">"There is no one who loves pain itself, who seeks after it and wants to have it,
+            simply because it is pain..."</h5>
+        <hr>
+        <h3>What is Lorem Ipsum?</h3>
+        <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <div id="modoVision"
+            style="background-color: rgb(41, 41, 41); display: inline-block; padding: 2px 4px; position: absolute; top: 10px; right: 15px;">
+            <input type="button" value="Día" id="iDia" onclick="cambiar_aDia();">
+            <input type="button" value="Noche" id="iNoche" onclick="cambiar_aNoche();">
+        </div>
+    </div>
+
+</body>
+
+</html>

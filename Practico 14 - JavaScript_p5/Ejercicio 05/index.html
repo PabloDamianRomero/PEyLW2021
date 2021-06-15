@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 JSp5</title>
+    <script type="text/javascript">
+
+        function calificar($nota) {
+            var $salida = document.getElementById('resultado');
+            $nota = parseInt($nota);
+            if (($nota >= 0) && ($nota <= 3)) {
+                $salida.innerHTML = "<strong>Muy Deficiente</strong>";
+            } else if (($nota > 3) && ($nota < 5)) {
+                $salida.innerHTML = "<strong>Insuficiente</strong>";
+            } else if (($nota >= 5) && ($nota <= 6)) {
+                $salida.innerHTML = "<strong>Suficiente</strong>";
+            } else if (($nota > 6) && ($nota <= 7)) {
+                $salida.innerHTML = "<strong>Bien</strong>";
+            } else if (($nota > 7) && ($nota <= 9)) {
+                $salida.innerHTML = "<strong>Notable</strong>";
+            } else if (($nota > 9) && ($nota <= 10)) {
+                $salida.innerHTML = "<strong>Sobresaliente</strong>";
+            } else {
+                $salida.innerHTML = "<strong>ERROR Numero inválido o fuera de rango</strong>";
+            }
+        }
+
+    </script>
+</head>
+
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(48, 48, 48);">
+    <!-- ENUNCIADO -->
+    <div class="enunciado" style="background-color: rgb(195, 228, 247); padding: 20px;">
+        <h2>PRACTICO 5 JavaScript</h2>
+        <p>Solicitar una nota numérica.Mostrar la calificación según la nota:</p>
+        <ul>
+            <li>0-3: Muy deficiente</li>
+            <li>3-5: Insuficiente</li>
+            <li>5-6: Suficiente</li>
+            <li>6-7: Bien</li>
+            <li>7-9: Notable</li>
+            <li>9-10: Sobresaliente</li>
+            <li>ERROR Numero inválido o fuera de rango</li>
+        </ul>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- CONTENIDO -->
+
+    <div id="contenido" style="background-color: rgb(205, 252, 230); padding: 20px;">
+
+        <input type="text" name="iNota" id="iNota" placeholder="Ingrese nota">
+        <input type="submit" value="Validar" onclick="calificar(document.getElementById('iNota').value);">
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- RESULTADO -->
+
+    <div id="resultado" style="background-color: rgb(222, 250, 209); padding: 20px;">
+
+    </div>
+
+</body>
+
+</html>

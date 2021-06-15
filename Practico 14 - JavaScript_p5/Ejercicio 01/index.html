@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 JSp5</title>
+    <script type="text/javascript">
+
+        function validar($dato) {
+            var $salida, $largoMax, $num, $prod;
+            $largoMax = 11;
+            $salida = document.getElementById('resultado');
+            if ($dato != "") {
+                if (($dato.length) == $largoMax) {
+                    $num = esNumerico($dato);
+                    $prod = calcular($dato);
+                    if (($num) && ($prod)) {
+                        $salida.innerHTML = "<strong>El CUIT ("+$dato+") es válido</strong>"
+                        document.getElementById('iCuit').focus();
+                    } else {
+                        $salida.innerHTML = "<strong>El CUIT ("+$dato+") no es válido</strong>"
+                        document.getElementById('iCuit').value = "";
+                        document.getElementById('iCuit').focus();
+                    }
+                } else {
+                    $salida.innerHTML = "<strong>El CUIT no es de 11 números</strong>"
+                    document.getElementById('iCuit').value = "";
+                    document.getElementById('iCuit').focus();
+                }
+
+            } else {
+                $salida.innerHTML = "<strong>EL CAMPO ESTÁ VACÍO</strong>"
+                document.getElementById('iCuit').focus();
+            }
+        }
+
+        function esNumerico($datos) {
+            var $respuesta, $largo, $i;
+            $respuesta = true;
+            $largo = $datos.length;
+            $i = 0;
+            while (($i < $largo) && ($respuesta)) {
+                var $valor = parseInt($datos[$i]);
+                if (isNaN($valor)) { // si no es número devolverá True y si es número devolverá False.
+                    $respuesta = false;
+                }
+                $i++;
+            }
+            return $respuesta;
+        }
+
+        function calcular($datos) {
+            // EJ: 20172543597
+            var $respuesta, $i, $j, $ultimoValor, $suma, $modulo, $diferenciaFinal;
+            var $valores = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
+
+            $respuesta = true;
+            $ultimoValor = parseInt($datos[10]);
+            $i = 0;
+            $suma = 0;
+            while ($i < 10) {
+                $suma += parseInt($datos[$i]) * parseInt($valores[$i]);
+                $i++;
+            }
+            $modulo = $suma % 11;
+            $diferenciaFinal = 11 - $modulo;
+            if ($diferenciaFinal != $ultimoValor) {
+                $respuesta = false;
+            }
+            // console.log("Suma " + $suma);
+            // console.log("MOD " + $modulo);
+            // console.log("Dif " + $diferenciaFinal);
+            return $respuesta;
+        }
+
+    </script>
+</head>
+
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(48, 48, 48);">
+    <!-- ENUNCIADO -->
+    <div class="enunciado" style="background-color: rgb(195, 228, 247); padding: 20px;">
+        <h2>PRACTICO 5 JavaScript</h2>
+        <p>Crear una función Javascript que reciba un string que representa un CUIT válido sin guiones, y devuelva
+            VERDADERO si el CUIT es correcto, y FALSO si el CUIT es incorrecto</p>
+        <p>Para que el CUIT sea correcto debe cumplir con las siguientes condiciones:</p>
+        <ol>
+            <li>Compuesto exclusivamente de números</li>
+            <li>Cumple con el dígito verificador según el algoritmo de verificación. El algoritmo se puede encontrar en
+                <a href="https://www.taringa.net/+apuntes_y_monografias/algoritmo-c-u-i-t-c-u-i-l-argentino_ibr64"
+                    target="_blank">ACÁ</a>
+            </li>
+        </ol>
+        <p>Crear una página HTML que nos solicite un CUIT en un text y mediante el uso de un botón nos indique si el
+            CUIT es correcto o incorrecto</p>
+        <p>Algunos CUITs válidos: 30586762199-30546689979-30500959629-20114594955</p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- CONTENIDO -->
+
+    <div id="contenido" style="background-color: rgb(205, 252, 230); padding: 20px;">
+
+        <input type="text" name="iCuit" id="iCuit" placeholder="Ingrese CUIT">
+        <input type="submit" value="Validar" onclick="validar(document.getElementById('iCuit').value);">
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- RESULTADO -->
+
+    <div id="resultado" style="background-color: rgb(222, 250, 209); padding: 20px;">
+
+    </div>
+
+</body>
+
+</html>

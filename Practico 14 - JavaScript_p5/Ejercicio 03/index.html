@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 JSp5</title>
+    <script type="text/javascript">
+
+        function validar($valor) {
+            var $lugar, $cadenaInvertida, $cadenaSinEspacios, $esPalindromo;
+            $lugar = document.getElementById('resultado');
+            $cadenaSinEspacios = borrarEspacios($valor);
+            $cadenaInvertida = cadenaInvertida($cadenaSinEspacios);
+            $esPalindromo = recorrerCadena($cadenaSinEspacios, $cadenaInvertida);
+            if ($esPalindromo) {
+                $lugar.innerHTML = "<p>La palaba ingresada <strong>ES</strong> un palíndromo</p>";
+                $lugar.innerHTML += "<p>Palabra original: <span style = 'font-style: italic; color: #C17F0F'>" + $valor + "</span></p>"
+            } else {
+                $lugar.innerHTML = "<p>La palaba ingresada <strong>NO ES</strong> un palíndromo</p>";
+                $lugar.innerHTML += "<p>Palabra original: <span style = 'font-style: italic; color: #C17F0F'>" + $valor + "</span></p>"
+            }
+        }
+
+        function recorrerCadena($cadena1, $cadena2) {
+            var $seguir, $largo, $i;
+            $largo = $cadena1.length;
+            $seguir = true;
+            $i = 0;
+            if ($largo > 0) {
+                while (($i < $largo) && ($seguir)) {
+                    if ($cadena1[$i] != $cadena2[$i]) {
+                        $seguir = false;
+                    }
+                    $i++;
+                }
+            } else {
+                $seguir = false;
+            }
+            return $seguir;
+        }
+
+        function cadenaInvertida($cadena) {
+            var $invertida, $largoCadena, $caracter;
+            $invertida = "";
+            $largoCadena = $cadena.length;
+            $j = $largoCadena - 1;
+            for ($i = $largoCadena; $i > 0; $i--) {
+                $caracter = $cadena[$j];
+                $invertida += $caracter;
+                $j = $j - 1;
+            }
+            return $invertida;
+        }
+
+        function borrarEspacios($cadena) {
+            var $conversion, $largoCadena, $caracter;
+            $cadena = $cadena.toLowerCase();
+            $largoCadena = $cadena.length;
+            $conversion = "";
+            for ($i = 0; $i < $largoCadena; $i++) {
+                $caracter = $cadena[$i];
+                if ($caracter != " ") {
+                    $conversion += $caracter;
+                }
+            }
+            return $conversion;
+        }
+
+
+
+    </script>
+</head>
+
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(48, 48, 48);">
+    <!-- ENUNCIADO -->
+    <div class="enunciado" style="background-color: rgb(195, 228, 247); padding: 20px;">
+        <h2>PRACTICO 5 JavaScript</h2>
+        <p>Definir una función que determine si la cadena de texto que se le pasa como parámetro es un palíndromo, es
+            decir, si se lee de la misma forma desde la izquierda y desde la derecha. Ejemplo de palíndromo complejo:
+            "La ruta nos aporto otro paso natural".</p>
+        <p>Implemente una página HTML donde se pueda probar con un texto para pedir la frase y un botón para controlar
+            si es palíndromo.</p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- CONTENIDO -->
+
+    <div id="contenido" style="background-color: rgb(205, 252, 230); padding: 20px;">
+
+        <input type="text" name="iPalabra" id="iPalabra" placeholder="Ingrese palabra">
+        <input type="submit" value="Validar" onclick="validar(document.getElementById('iPalabra').value);">
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- RESULTADO -->
+
+    <div id="resultado" style="background-color: rgb(222, 250, 209); padding: 20px;">
+
+    </div>
+
+</body>
+
+</html>
